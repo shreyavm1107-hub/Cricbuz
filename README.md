@@ -28,7 +28,7 @@ The Live Matches page needs a free RapidAPI key:
 5. Set it:
    - **Locally**: create `.streamlit/secrets.toml` with:
      ```toml
-     CRICBUZZ_API_KEY = curl --request GET \
+     CRICBUZZ_API_KEY = 
 	--url https://cricbuzz-cricket.p.rapidapi.com/mcenter/v1/40381/hscard \
 	--header 'x-rapidapi-host: cricbuzz-cricket.p.rapidapi.com' \
 	--header 'x-rapidapi-key: 55ee242e13msh0315781f289791bp1361c3jsn3ee797be9580'
