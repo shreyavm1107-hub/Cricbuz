@@ -29,12 +29,21 @@ The Live Matches page needs a free RapidAPI key:
    - **Locally**: create `.streamlit/secrets.toml` with:
      ```toml
      CRICBUZZ_API_KEY = 
-	GET /matches/v1/live HTTP/1.1
-X-Rapidapi-Key: 55ee242e13msh0315781f289791bp1361c3jsn3ee797be9580
-X-Rapidapi-Host: cricbuzz-cricket.p.rapidapi.com
-Host: cricbuzz-cricket.p.rapidapi.com
+	import http.client
 
-CURLcode ret = curl_easy_perform(hnd);
+conn = http.client.HTTPSConnection("cricbuzz-cricket.p.rapidapi.com")
+
+headers = {
+    'x-rapidapi-key': "55ee242e13msh0315781f289791bp1361c3jsn3ee797be9580",
+    'x-rapidapi-host': "cricbuzz-cricket.p.rapidapi.com"
+}
+
+conn.request("GET", "/matches/v1/live", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
    - **Streamlit Cloud**: app → Settings → Secrets → paste the same line.
 
 Until the key is set, every other page (Top Stats, all 25 SQL queries, CRUD) works fully
