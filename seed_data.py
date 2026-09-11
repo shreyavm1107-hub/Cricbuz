@@ -8,7 +8,7 @@ Run once with:  python data/seed_data.py
 import sys, os, random, datetime
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from utils.db_connection import get_connection, init_schema, db_is_empty
+from db_connection import get_connection, init_schema, db_is_empty
 
 random.seed(42)
 
