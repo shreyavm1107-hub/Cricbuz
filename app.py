@@ -2,8 +2,8 @@ import streamlit as st
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from utils.db_connection import init_schema, db_is_empty, run_query
-from utils.cricbuzz_api import has_api_key
+from db_connection import init_schema, db_is_empty, run_query
+from cricbuzz_api import has_api_key
 
 st.set_page_config(page_title="Cricbuzz LiveStats", page_icon="🏏", layout="wide")
 
