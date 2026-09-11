@@ -9,7 +9,7 @@ st.set_page_config(page_title="Cricbuzz LiveStats", page_icon="🏏", layout="wi
 
 init_schema()
 if db_is_empty():
-    from data.seed_data import seed
+    from seed_data import seed
     seed()
 
 st.title("🏏 Cricbuzz LiveStats")
